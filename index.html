@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilla de Cálculos</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Agregar enlaces a jsPDF y autoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.16/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <h1>Planilla de Cálculos</h1>
+    <form id="calculationForm">
+        <label for="clientName">Nombre del Cliente:</label>
+        <input type="text" id="clientName" name="clientName" required>
+        
+        <label for="clientType">Tipo de Cliente:</label>
+        <select id="clientType" name="clientType" required>
+            <option value="comision">CTA CTE</option>
+            <option value="tarea">Comision Completa</option>
+            <option value="completo">Parte Comisión</option>
+        </select>
+        
+        <label for="paymentAmount">Monto Pagado:</label>
+        <input type="number" id="paymentAmount" name="paymentAmount" required>
+        
+        <label for="date">Fecha:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <button type="button" onclick="addEntry()">Agregar</button>
+    </form>
+
+    <h2>Entradas del Día</h2>
+    <table id="entriesTable">
+        <thead>
+            <tr>
+                <th>Nombre del Cliente</th>
+                <th>Tipo de Cliente</th>
+                <th>Monto Pagado</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h3>Total Generado: $<span id="totalAmount">0.00</span></h3>
+    <button onclick="generatePDF()">Generar PDF</button>
+    <button onclick="clearData()" style="background-color: #e74c3c; margin-top: 10px;">Borrar Todo</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
