@@ -55,6 +55,14 @@ button:hover {
     background-color: #2980b9;
 }
 
+button.delete-btn {
+    background-color: #e74c3c;
+}
+
+button.delete-btn:hover {
+    background-color: #c0392b;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -80,6 +88,10 @@ td {
     background-color: #ecf0f1;
 }
 
+td button {
+    padding: 5px 10px;
+}
+
 h3 {
     margin-top: 20px;
 }
@@ -90,8 +102,27 @@ button:disabled {
 }
 
 @media (max-width: 600px) {
-    form, table {
-        width: 100%;
-        box-sizing: border-box;
+    body {
+        padding: 10px;
+    }
+
+    form {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    input, select {
+        width: calc(100% - 12px);
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
     }
 }
